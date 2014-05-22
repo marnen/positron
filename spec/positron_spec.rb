@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 describe Positron do
-  describe '.db' do
-    it 'gets included into the host class' do
+  describe '.included' do
+    it "creates a new ActiveRecord class, accessible through the host class's .db method" do
       host_class = Class.new
       host_class.class_eval { include Positron }
 
-      host_class.should respond_to :db
+      db_class = host_class.send(:db)
+      db_class.should be_a_kind_of Class
+      db_class.superclass.should == ActiveRecord::Base
     end
   end
 end
