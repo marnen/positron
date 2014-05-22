@@ -16,6 +16,11 @@ describe Positron::ClassMethods do
         db.new.should be_a_kind_of ActiveRecord::Base
       end
 
+      it 'memoizes the class for future calls' do
+        db2 = host_class.send :db
+        db.should == db2
+      end
+
       it 'sets the table name from the host class' do
         class_name = Faker::Lorem.words(2).map(&:titleize).join
         host_class.stub name: class_name
