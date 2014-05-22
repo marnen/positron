@@ -28,7 +28,7 @@ end
 ```
 
 ```haml
-# app/views/users/show.html.haml
+/ app/views/users/show.html.haml
 %p= @user.name
 %p= @user.address
 ```
