@@ -11,7 +11,7 @@ describe Positron::ClassMethods do
     it 'returns a new ActiveRecord class' do
       db_class = host_class.send(:db)
       db_class.should be_a_kind_of Class
-      db_class.superclass.should == ActiveRecord::Base
+      db_class.new.should be_a_kind_of ActiveRecord::Base
     end
   end
 end
