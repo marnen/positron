@@ -1,5 +1,7 @@
-require "positron/version"
+Dir.glob(File.join File.dirname(__FILE__), 'positron/**/*.rb') {|file| require file }
 
 module Positron
-  # Your code goes here...
+  def self.included(base)
+    base.extend Positron::ClassMethods
+  end
 end

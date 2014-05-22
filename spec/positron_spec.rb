@@ -1,11 +1,12 @@
 require 'spec_helper'
 
 describe Positron do
-  it 'should have a version number' do
-    Positron::VERSION.should_not be_nil
-  end
+  describe '.db' do
+    it 'gets included into the host class' do
+      host_class = Class.new
+      host_class.class_eval { include Positron }
 
-  it 'should do something useful' do
-    false.should be_true
+      host_class.should respond_to :db
+    end
   end
 end
