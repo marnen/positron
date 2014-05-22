@@ -20,10 +20,16 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'activerecord'
 
-  spec.add_development_dependency "bundler", "~> 1.3"
-  spec.add_development_dependency "rake"
-  spec.add_development_dependency "rspec"
-  spec.add_development_dependency 'activerecord-nulldb-adapter'
-  spec.add_development_dependency 'codeclimate-test-reporter'
-  spec.add_development_dependency 'guard-rspec'
+  [
+    ["bundler", "~> 1.3"],
+    "rake",
+    "rspec",
+    'activerecord-nulldb-adapter',
+    'codeclimate-test-reporter',
+    'ffaker',
+    'guard-rspec'
+  ].each do |gem|
+    spec.add_development_dependency *gem
+  end
+
 end

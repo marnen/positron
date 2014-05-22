@@ -8,10 +8,20 @@ describe Positron::ClassMethods do
       host_class.should_not respond_to :db
     end
 
-    it 'returns a new ActiveRecord class' do
-      db_class = host_class.send(:db)
-      db_class.should be_a_kind_of Class
-      db_class.new.should be_a_kind_of ActiveRecord::Base
+    context 'ActiveRecord attributes' do
+      let(:db) { host_class.send :db }
+
+      it 'returns a new ActiveRecord class' do
+        db.should be_a_kind_of Class
+        db.new.should be_a_kind_of ActiveRecord::Base
+      end
+
+      it 'sets the table name from the host class' do
+        class_name = Faker::Lorem.words(2).map(&:titleize).join
+        host_class.stub name: class_name
+
+        db.table_name.should == class_name.underscore.pluralize
+      end
     end
   end
 end
