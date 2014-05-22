@@ -33,7 +33,7 @@ end
 %p= @user.address
 ```
 
-So far so good. We use ActiveRecord to run a database query in the controller to get `@user`, then we pass `@user` to the view and call simple methods on it, as described above
+So far so good. We use ActiveRecord to run a database query in the controller to get `@user`, then we pass `@user` to the view and call simple methods on it, as described above.
 
 ## The first problem: hidden database queries in views
 
