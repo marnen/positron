@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Positron::VERSION
   spec.authors       = ["Marnen Laibow-Koser"]
   spec.email         = ["marnen@marnen.org"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Don't leak ActiveRecord details into your Rails models!}
+  spec.summary       = %q{Get ActiveRecord persistence out of your public model interface}
+  spec.homepage      = "http://www.github.com/marnen/positron"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
