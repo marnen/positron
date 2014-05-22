@@ -43,7 +43,7 @@ Ruby adheres to the [Uniform Access Principle](http://en.wikipedia.org/wiki/Unif
 class User < ActiveRecord::Base
   has_many :addresses
   def address
-    addresses.first
+    addresses.first.to_s
   end
 end
 ```
