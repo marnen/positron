@@ -5,12 +5,11 @@ module Positron::ClassMethods
 
   def db
     unless @_db
-      host_class = self
       @_db = Class.new ActiveRecord::Base
-      @_db.class_eval "@host_class_name = '#{host_class.name}'"
+      @_db.instance_variable_set :@host_class, self
       @_db.class_eval do
         def self.table_name
-          @host_class_name.underscore.pluralize
+          @host_class.name.to_s.underscore.pluralize
         end
       end
     end
