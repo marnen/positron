@@ -7,7 +7,7 @@ This gem is designed to help separate ActiveRecord (as an implementation detail)
 
 How and why does it do that? Read on!
 
-## Rails MVC basics; or, the stuff you already know
+## Rails MVC basics, or the stuff you already know
 
 In a well-designed Rails (or similar MVC) application, the view should never touch the database. Rather, all data should be marshalled through the controller, and the view is generally restricted to calling simple accessor-type methods on the model and displaying the results. So you'd never write `User.find(params[:id]).name` in the view; instead, a typical Rails application looks like this:
 
