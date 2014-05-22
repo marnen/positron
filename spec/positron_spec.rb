@@ -1,11 +1,11 @@
-require 'minitest_helper'
+require 'spec_helper'
 
 describe Positron do
-  it 'has a version number' do
-    ::Positron::VERSION.wont_be_nil
+  it 'should have a version number' do
+    Positron::VERSION.should_not be_nil
   end
 
-  it 'does something useful' do
-    true.must_equal false
+  it 'should do something useful' do
+    false.should be_true
   end
 end
