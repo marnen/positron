@@ -3,7 +3,7 @@ require 'active_record'
 module Positron::ClassMethods
   private
 
-  def db
+  def db(&block)
     unless @_db
       @_db = Class.new ActiveRecord::Base
       @_db.instance_variable_set :@host_class, self
@@ -13,6 +13,10 @@ module Positron::ClassMethods
         end
       end
     end
-    @_db
+    @_db.tap do
+      if block_given?
+        @_db.class_eval &block
+      end
+    end
   end
 end
