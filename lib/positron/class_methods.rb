@@ -1,11 +1,9 @@
-require 'active_record'
-
 module Positron::ClassMethods
   private
 
   def db(&block)
     unless @_db
-      @_db = Class.new ActiveRecord::Base
+      @_db = Positron::DbClass.new
       @_db.instance_variable_set :@host_class, self
       @_db.class_eval do
         def self.table_name

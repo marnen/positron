@@ -10,7 +10,6 @@ describe Positron::ClassMethods do
     end
 
     context 'ActiveRecord attributes' do
-
       it 'returns a new ActiveRecord class' do
         db.should be_a_kind_of Class
         db.new.should be_a_kind_of ActiveRecord::Base
