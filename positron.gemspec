@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
 
   [
     ["bundler", "~> 1.3"],
+    "byebug",
     "rake",
     "rspec",
     'activerecord-nulldb-adapter',
