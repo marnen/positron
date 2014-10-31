@@ -13,5 +13,9 @@ describe Positron do
       db_class = host_class.send :db
       host.send(:db).class.should == db_class
     end
+
+    it 'returns the same object each time' do
+      host.send(:db).should equal host.send(:db)
+    end
   end
 end

@@ -6,6 +6,6 @@ module Positron
   private
 
   def db
-    self.class.send(:db).new
+    @_db ||= self.class.send(:db).new
   end
 end
