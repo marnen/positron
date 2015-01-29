@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
     ["bundler", "~> 1.3"],
     "byebug",
     "rake",
-    "rspec",
+    ["rspec", ">= 3.0.0"],
     'activerecord-nulldb-adapter',
     'codeclimate-test-reporter',
     'ffaker',
